@@ -3,7 +3,7 @@ import bodyParser from 'body-parser';
 import questionsRouter from './routes/google-document.js';
 import userRouter from './routes/user.js';
 import userResponseRouter from './routes/user-response.js';
-import init from './common/Socket.js';
+import {init} from './common/Socket.js';
 import { corsConfig, REQUEST_FAILURE_MESSAGES, REQUEST_SUCCESS_MESSAGE, SECRET_KEY, SOCKET_EVENTS } from './common/constants.js';
 import cors from "cors";
 import mongoose from 'mongoose';
