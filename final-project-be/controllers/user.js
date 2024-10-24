@@ -1,4 +1,3 @@
-import { Request, Response } from "express";  
 import { logger } from "../common/pino.js";
 import { REQUEST_FAILURE_MESSAGES, REQUEST_SUCCESS_MESSAGE, SECRET_KEY } from "../common/constants.js";
 const Users = require('../models/user.js');
