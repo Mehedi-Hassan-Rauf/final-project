@@ -1,5 +1,5 @@
 import mongoose, { Schema } from "mongoose";
-import { QUESTION_SCHEMA } from "./question";
+import { QUESTION_SCHEMA } from "./question.js";
 
 const DOCUMENT_SCHEMA = new mongoose.Schema({
     _id: { type: mongoose.Schema.Types.ObjectId, auto: true },

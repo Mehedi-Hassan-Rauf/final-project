@@ -1,4 +1,4 @@
-import { Server } from "socket.io.js";
+import { Server } from "socket.io";
 import { corsConfig } from "./constants.js";
 let io;
 

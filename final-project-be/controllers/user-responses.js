@@ -1,5 +1,5 @@
 import { logger } from "../common/pino.js";
-import { getIo } from "../common/Socket";
+import { getIo } from "../common/Socket.js";
 import { REQUEST_FAILURE_MESSAGES, REQUEST_SUCCESS_MESSAGE, SOCKET_CHANNEL_NAMES } from "../common/constants.js";
 
 const UserReponse = require('../models/user-response.js');

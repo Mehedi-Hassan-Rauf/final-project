@@ -6,7 +6,7 @@ import userResponseRouter from './routes/user-response.js';
 import { corsConfig, REQUEST_FAILURE_MESSAGES, REQUEST_SUCCESS_MESSAGE, SECRET_KEY, SOCKET_EVENTS } from './common/constants.js';
 import cors from "cors";
 import mongoose from 'mongoose';
-import { logger } from './common/pino';
+import { logger } from './common/pino.js';
 import dotenv from "dotenv";
 import jwt from "jsonwebtoken";
 import path from "path";
