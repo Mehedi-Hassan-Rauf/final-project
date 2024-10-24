@@ -7,6 +7,6 @@
     "strict": true,
     "esModuleInterop": true
   },
-  "include": ["final-project-be/**/*.ts"],
+  "include": ["final-project-be/**/*.ts", "final-project-be/app.js"],
   "exclude": ["node_modules"]
 }
