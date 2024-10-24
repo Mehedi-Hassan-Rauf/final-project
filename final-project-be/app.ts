@@ -36,7 +36,7 @@ app.get("/", (req, res) => {
 });
 
 // for user authentication 
-app.use((req, res, next) => {
+app.use((req: any, res: any, next: any) => {
   const authHeader = req.get(AUTHORISATION);
   if (!authHeader) {
     req.isUserAuth = false;
@@ -44,7 +44,7 @@ app.use((req, res, next) => {
   }
 
   const token = authHeader;
-  let decodedToken;
+  let decodedToken: any;
   try {
     decodedToken = jwt.verify(token, SECRET_KEY);
   } catch (err) {
@@ -77,7 +77,7 @@ mongoose.connect(process.env.MONGO_URL?process.env.MONGO_URL:"")
     });
 
     const io = require('./common/Socket').init(server);
-    io.on(SOCKET_EVENTS.CONNECTION, (socket) => {
+    io.on(SOCKET_EVENTS.CONNECTION, (socket: any) => {
       logger.info(SOCKET_CONNECTED, socket.id);
     });
   })
