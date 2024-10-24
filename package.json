@@ -5,10 +5,9 @@
   "main": "app.js",
   "type": "module",
   "scripts": {
-    "build": "npm install && npm install --prefix final-project-fe && npm run build --prefix final-project-fe && tsc",
-    "start": "node dist/app.js",
+    "start": "node final-project-be/app.js",
     "server": "nodemon final-project-be/app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npm install && npm install --prefix final-project-fe && npm run build --prefix final-project-fe"
   },
   "author": "rauf",
   "license": "ISC",

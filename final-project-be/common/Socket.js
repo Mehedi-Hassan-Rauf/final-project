@@ -1,8 +1,8 @@
 import { Server } from "socket.io";
 import { corsConfig } from "./constants";
-let io: any;
+let io;
 
-export const init = (httpServer: any) => {
+export const init = (httpServer) => {
   io = new Server(httpServer, {
     // cors: corsConfig
     cors: {
