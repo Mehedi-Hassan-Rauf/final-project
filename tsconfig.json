@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "rootDir": "./final-project-be",
+    "module": "commonjs",
+    "target": "es6",
+    "strict": true,
+    "esModuleInterop": true
+  },
+  "include": ["final-project-be/**/*.ts"],
+  "exclude": ["node_modules"]
+}
