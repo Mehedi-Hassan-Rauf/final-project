@@ -1,6 +1,6 @@
 import express from 'express';
-import { getUserByIdController, signInUserController, signUpUserController } from '../controllers/user';
-import { API_REQUEST_ROUTES } from '../common/constants';
+import { getUserByIdController, signInUserController, signUpUserController } from '../controllers/user.js';
+import { API_REQUEST_ROUTES } from '../common/constants.js';
 
 const router = express.Router();
 

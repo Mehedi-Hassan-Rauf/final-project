@@ -2,8 +2,8 @@ import express from 'express';
 import {
     createNewDocument, deleteDocument, getAllDocumentIds,
     getGoogleDocumentByIdController, updateDocument
-} from '../controllers/google-document';
-import { API_REQUEST_ROUTES } from '../common/constants';
+} from '../controllers/google-document.js';
+import { API_REQUEST_ROUTES } from '../common/constants.js';
 
 const router = express.Router();
 

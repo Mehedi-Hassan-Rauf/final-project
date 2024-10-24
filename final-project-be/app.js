@@ -1,9 +1,9 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import questionsRouter from './routes/google-document';
-import userRouter from './routes/user';
-import userResponseRouter from './routes/user-response';
-import { corsConfig, REQUEST_FAILURE_MESSAGES, REQUEST_SUCCESS_MESSAGE, SECRET_KEY, SOCKET_EVENTS } from './common/constants';
+import questionsRouter from './routes/google-document.js';
+import userRouter from './routes/user.js';
+import userResponseRouter from './routes/user-response.js';
+import { corsConfig, REQUEST_FAILURE_MESSAGES, REQUEST_SUCCESS_MESSAGE, SECRET_KEY, SOCKET_EVENTS } from './common/constants.js';
 import cors from "cors";
 import mongoose from 'mongoose';
 import { logger } from './common/pino';

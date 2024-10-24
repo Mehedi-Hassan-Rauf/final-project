@@ -1,6 +1,6 @@
 import express from 'express';
-import { fetchUserResponseData, getUserResponseController, saveUserResponseController } from '../controllers/user-responses';
-import { API_REQUEST_ROUTES } from '../common/constants';
+import { fetchUserResponseData, getUserResponseController, saveUserResponseController } from '../controllers/user-responses.js';
+import { API_REQUEST_ROUTES } from '../common/constants.js';
 
 const router = express.Router();
 
