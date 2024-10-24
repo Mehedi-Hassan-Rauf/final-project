@@ -18,4 +18,5 @@ const USER_RESPONSE_SCHEMA = new mongoose.Schema({
     answers: {}
 });
 
-module.exports = mongoose.model("UserResponse", USER_RESPONSE_SCHEMA);
+const UserResponse = mongoose.model("UserResponse", USER_RESPONSE_SCHEMA);
+export default UserResponse;

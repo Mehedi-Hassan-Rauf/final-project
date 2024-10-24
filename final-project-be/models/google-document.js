@@ -27,4 +27,5 @@ const DOCUMENT_SCHEMA = new mongoose.Schema({
     questions: [QUESTION_SCHEMA]
 });
 
-module.exports = mongoose.model("Document", DOCUMENT_SCHEMA);
+const Document = mongoose.model("Document", DOCUMENT_SCHEMA);
+export default Document;
