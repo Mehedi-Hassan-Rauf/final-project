@@ -9,6 +9,8 @@ import mongoose from 'mongoose';
 import { logger } from './common/pino';
 import dotenv from "dotenv";
 import jwt from "jsonwebtoken";
+import path from "path";
+
 
 const AUTHORISATION = "Authorization";
 const SOCKET_CONNECTED = "Socket connected: ";
@@ -17,6 +19,16 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors(corsConfig));
 dotenv.config();
+
+const __dirname = path.resolve();
+
+app.use(express.json()); // to parse the incoming requests with JSON payloads (from req.body)
+app.use(express.static(path.join(__dirname, "/final-project-fe/dist")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "final-project-fe", "dist", "index.html"));
+});
+
 
 // Test route
 app.get("/", (req, res) => {

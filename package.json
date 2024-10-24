@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.ts",
+  "type": "module",
   "scripts": {
-    "build": "tsc",
-    "start": "node final-project-be/app.js",
+    "build": "npm install && npm install --prefix final-project-fe && npm run build --prefix final-project-fe",
+    "start": "node final-project-be/app.ts",
     "server": "nodemon --watch 'final-project-be/**/*.ts' --exec 'ts-node' final-project-be/app.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
-
   },
   "author": "rauf",
   "license": "ISC",
@@ -21,6 +21,7 @@
     "express": "^4.19.2",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.4.4",
+    "path": "^0.12.7",
     "pino": "^9.2.0",
     "pino-pretty": "^11.2.1",
     "socket.io": "^4.7.5",

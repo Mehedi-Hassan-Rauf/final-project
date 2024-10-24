@@ -6,7 +6,7 @@ export const init = (httpServer: any) => {
   io = new Server(httpServer, {
     // cors: corsConfig
     cors: {
-      origin: 'https://final-project-fe-psi.vercel.app',  // Frontend URL
+      origin: 'http://localhost:3000',  // Frontend URL
       methods: ["GET", "POST"],
       credentials: true  
     }
