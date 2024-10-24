@@ -23,11 +23,11 @@ dotenv.config();
 
 const __dirname = path.resolve();
 
-app.use(express.json()); // to parse the incoming requests with JSON payloads (from req.body)
-app.use(express.static(path.join(__dirname, "/final-project-fe/dist")));
+app.use(express.json()); 
+app.use(express.static(path.join(__dirname, "/final-project-fe/build")));
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "final-project-fe", "dist", "index.html"));
+  res.sendFile(path.join(__dirname, "final-project-fe", "build", "index.html"));
 });
 
 
