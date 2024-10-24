@@ -1,11 +1,11 @@
 import { logger } from "../common/pino.js";
 import { getIo } from "../common/Socket.js";
 import { REQUEST_FAILURE_MESSAGES, REQUEST_SUCCESS_MESSAGE, SOCKET_CHANNEL_NAMES } from "../common/constants.js";
+import UserResponse from '../models/user-response.js';
 
-const UserReponse = require('../models/user-response.js');
 
 export const getUserResponseController = (req, res) => { 
-  UserReponse.find({ documentId: req.params.documentId }, { _id: 0, answers: 0, __v: 0 }).populate({
+  UserResponse.find({ documentId: req.params.documentId }, { _id: 0, answers: 0, __v: 0 }).populate({
     path: 'userId',
     model: 'User',
     select: 'username _id'
@@ -21,7 +21,7 @@ export const getUserResponseController = (req, res) => {
 };
 
 export const fetchUserResponseData = (req, res) => { 
-  UserReponse.find({ documentId: req.params.documentId, userId: req.params.userId }, { _id: 0, __v: 0 })
+  UserResponse.find({ documentId: req.params.documentId, userId: req.params.userId }, { _id: 0, __v: 0 })
     
     .populate({
       path: 'documentId',
@@ -55,7 +55,7 @@ export const saveUserResponseController = (req, res) => {
   let username = req.body.username;
   delete userResponse.username;
 
-  UserReponse.findOneAndUpdate({ userId: req.body.userId, documentId: req.body.documentId },
+  UserResponse.findOneAndUpdate({ userId: req.body.userId, documentId: req.body.documentId },
     { $set: userResponse },
     { upsert: true, returnOriginal: false }).then((formResponse) => { 
       logger.info(REQUEST_SUCCESS_MESSAGE.RESPONSE_SAVED_SUCCESSFULLY, formResponse._id);

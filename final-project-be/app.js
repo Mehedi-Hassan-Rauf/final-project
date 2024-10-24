@@ -3,6 +3,7 @@ import bodyParser from 'body-parser';
 import questionsRouter from './routes/google-document.js';
 import userRouter from './routes/user.js';
 import userResponseRouter from './routes/user-response.js';
+import init from './common/Socket.js';
 import { corsConfig, REQUEST_FAILURE_MESSAGES, REQUEST_SUCCESS_MESSAGE, SECRET_KEY, SOCKET_EVENTS } from './common/constants.js';
 import cors from "cors";
 import mongoose from 'mongoose';
@@ -76,7 +77,7 @@ mongoose.connect(process.env.MONGO_URL?process.env.MONGO_URL:"")
       logger.info(REQUEST_SUCCESS_MESSAGE.APP_STARTED);
     });
 
-    const io = require('./common/Socket').init(server);
+    const io = init(server);
     io.on(SOCKET_EVENTS.CONNECTION, (socket) => {
       logger.info(SOCKET_CONNECTED, socket.id);
     });

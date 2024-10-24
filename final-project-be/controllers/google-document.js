@@ -1,8 +1,8 @@
 import { REQUEST_FAILURE_MESSAGES, REQUEST_SUCCESS_MESSAGE, UNAUTHORIZED_ACCESS } from "../common/constants.js";
 import { logger } from "../common/pino.js";
-const Document = require('../models/google-document.js');
+import Document from '../models/google-document.js'; 
+import mongoose from "mongoose";
 
-let mongoose = require("mongoose");
 
 export const getGoogleDocumentByIdController = (req, res) => { 
   if (!req?.isUserAuth) {

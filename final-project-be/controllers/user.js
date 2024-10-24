@@ -1,13 +1,13 @@
 import { logger } from "../common/pino.js";
 import { REQUEST_FAILURE_MESSAGES, REQUEST_SUCCESS_MESSAGE, SECRET_KEY } from "../common/constants.js";
-const Users = require('../models/user.js');
-const jwt = require("jsonwebtoken");
-const bcrypt = require("bcryptjs");
+import User from '../models/user.js';
+import jwt from "jsonwebtoken";
+import bcrypt from "bcryptjs";
 const LOGGED_IN = "Logged In";
 const ONE_DAY = "1d";
 
 export const getUserByIdController = (req, res) => { 
-  Users.find({ username: req.params.id })
+  User.find({ username: req.params.id })
     .then((result) => { 
       logger.info(REQUEST_SUCCESS_MESSAGE.USER_LOGGEDIN_SUCCESSFULLY);
       res.status(200).send(result);
@@ -19,8 +19,8 @@ export const getUserByIdController = (req, res) => {
 
 export const signUpUserController = (req, res) => { 
   try {
-    let user = new Users(req.body);
-    Users.find({ email: req.body.email }).then((response) => { 
+    let user = new User(req.body);
+    User.find({ email: req.body.email }).then((response) => { 
       if (response.length > 0) {
         res.status(403).send(REQUEST_FAILURE_MESSAGES.USER_ALREADY_EXISTS);
       } else {
@@ -64,7 +64,7 @@ export const signInUserController = (req, res) => {
     return res.status(400).json({ msg: REQUEST_FAILURE_MESSAGES.PLEASE_ENTER_ALL_FIELDS });
   }
 
-  Users.find({ email: email }).then((user) => { 
+  User.find({ email: email }).then((user) => { 
     if (user.length === 0) {
       logger.error(REQUEST_FAILURE_MESSAGES.USER_DATA_NOT_FOUND, email);
       res.status(403).send({ message: REQUEST_FAILURE_MESSAGES.USER_DATA_NOT_FOUND });
