@@ -12,7 +12,7 @@ const useAxios = () => {
 
   // method to handle all type of api request ( GET, POST, PUT, DELETE )
   const HttpRequestController = async (path: string, method = HTTP_METHODS.GET, payload: any = null) => {
-    let url = 'https://final-project-be-five.vercel.app' + path;
+    let url = 'https://final-project-2vdl.onrender.com' + path;
 
     // headers are set here, retrieves the jwt token from local storage 
     let headers = {
