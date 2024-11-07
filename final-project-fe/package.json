@@ -44,7 +44,7 @@
     "eject": "react-scripts eject",
     "lint": "eslint --fix --ext .ts,.tsx ./src"
   },
-  "proxy": "http://localhost:9000",
+  "proxy": "https://final-project-2vdl.onrender.com",
   "eslintConfig": {
     "extends": [
       "react-app",
